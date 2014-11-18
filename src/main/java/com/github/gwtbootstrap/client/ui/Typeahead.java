@@ -82,7 +82,7 @@ public class Typeahead extends MarkupWidget {
         return new MatcherCallback() {
             @Override
             public boolean compareQueryToItem(String query, String item) {
-                return item.toLowerCase().contains(query.toLowerCase());
+                return item.toLowerCase().replaceAll("</?strong>", "").contains(query.toLowerCase());
             }
         };
     }
